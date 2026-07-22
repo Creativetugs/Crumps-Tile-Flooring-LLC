@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- STREAMING_CHUNK:Configuring document head and metadata... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crumps Tile & Flooring LLC | Premium Tile & Remodeling in Owensboro, KY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['"Bebas Neue"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#B89556',
+                            goldHover: '#9A7741',
+                            darkCharcoal: '#1A1A1A',
+                            black: '#111111',
+                            warmGray: '#6F6F6F',
+                            lightGray: '#F5F5F5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(17, 17, 17, 0.85), rgba(26, 26, 26, 0.9)), url('https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/Custom%20Walk-in%20Showers1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-overlay {
+            background: linear-gradient(to top, rgba(17, 17, 17, 0.95), rgba(17, 17, 17, 0.2));
+        }
+        .brand-gold-text {
+            color: #B89556;
+        }
+        .brand-gold-bg {
+            background-color: #B89556;
+        }
+        .brand-gold-border {
+            border-color: #B89556;
+        }
+    </style>
+</head>
+<body class="bg-[#111111] text-[#FFFFFF] antialiased font-sans selection:bg-[#B89556] selection:text-white">
+
+    <!-- STREAMING_CHUNK:Building top contact bar... -->
+    <div class="bg-[#1A1A1A] text-[#F5F5F5] text-xs sm:text-sm py-2 px-4 border-b border-[#2A2A2A]">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Serving Owensboro, KY & Surrounding Areas</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-shield-halved text-[#B89556] mr-2"></i>Licensed & Insured Remodeling Specialists</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:2702565833" class="hover:text-[#B89556] font-semibold transition"><i class="fa-solid fa-phone text-[#B89556] mr-2"></i>(270) 256-5833</a>
+                <a href="mailto:mattcrump015@yahoo.com" class="hover:text-[#B89556] transition hidden sm:inline"><i class="fa-solid fa-envelope text-[#B89556] mr-2"></i>mattcrump015@yahoo.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STREAMING_CHUNK:Building header navigation... -->
+    <header class="sticky top-0 z-40 bg-[#111111]/95 backdrop-blur-md shadow-lg border-b border-[#222222] transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/crumps-logo.png" alt="Crumps Tile & Flooring LLC Logo" class="h-12 w-auto object-contain bg-white/10 p-1 rounded-lg">
+                <div class="flex flex-col">
+                    <span class="font-heading tracking-wider text-2xl text-white leading-none">Crumps</span>
+                    <span class="text-[10px] uppercase tracking-widest text-[#B89556] font-semibold mt-1">Tile & Flooring LLC</span>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-[#F5F5F5]">
+                <a href="#services" class="hover:text-[#B89556] transition">Services</a>
+                <a href="#why-us" class="hover:text-[#B89556] transition">Why Us</a>
+                <a href="#gallery" class="hover:text-[#B89556] transition">Recent Projects</a>
+                <a href="#process" class="hover:text-[#B89556] transition">Our Process</a>
+                <a href="#areas" class="hover:text-[#B89556] transition">Service Areas</a>
+                <a href="#testimonials" class="hover:text-[#B89556] transition">Reviews</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-4">
+                <button onclick="openEstimateModal()" class="bg-[#B89556] hover:bg-[#9A7741] text-white font-semibold px-[30px] py-[14px] rounded-[8px] shadow-lg shadow-[#B89556]/20 transition-all transform hover:-translate-y-0.5 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i> Free Estimate
+                </button>
+            </div>
+
+            <button id="menu-btn" class="lg:hidden text-[#FFFFFF] hover:text-[#B89556] focus:outline-none p-2 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#1A1A1A] border-b border-[#333333] px-6 py-4 space-y-3 shadow-2xl">
+            <a href="#services" class="block font-medium text-[#F5F5F5] hover:text-[#B89556] py-1 mobile-link">Services</a>
+            <a href="#why-us" class="block font-medium text-[#F5F5F5] hover:text-[#B89556] py-1 mobile-link">Why Us</a>
+            <a href="#gallery" class="block font-medium text-[#F5F5F5] hover:text-[#B89556] py-1 mobile-link">Recent Projects</a>
+            <a href="#process" class="block font-medium text-[#F5F5F5] hover:text-[#B89556] py-1 mobile-link">Our Process</a>
+            <a href="#areas" class="block font-medium text-[#F5F5F5] hover:text-[#B89556] py-1 mobile-link">Service Areas</a>
+            <a href="#testimonials" class="block font-medium text-[#F5F5F5] hover:text-[#B89556] py-1 mobile-link">Reviews</a>
+            <div class="pt-3 border-t border-[#333333] flex flex-col gap-2">
+                <button onclick="openEstimateModal()" class="w-full bg-[#B89556] hover:bg-[#9A7741] text-white font-semibold py-3 rounded-[8px] text-center shadow-md">
+                    Get a Free Estimate
+                </button>
+                <a href="tel:2702565833" class="w-full bg-[#111111] text-white font-semibold py-3 rounded-[8px] text-center flex items-center justify-center gap-2 border border-[#333333]">
+                    <i class="fa-solid fa-phone text-[#B89556]"></i> Call (270) 256-5833
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- STREAMING_CHUNK:Building hero section... -->
+    <section class="hero-bg text-white relative py-24 sm:py-32 lg:py-44 flex items-center overflow-hidden border-b border-[#222222]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-[#B89556]/20 border border-[#B89556]/40 text-[#B89556] px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6 tracking-wide uppercase backdrop-blur-sm">
+                    <i class="fa-solid fa-award"></i> Owensboro's Premier Tile & Remodeling Contractor
+                </div>
+                <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-wider text-white mb-6 leading-none">
+                    QUALITY WORK. <span class="text-[#B89556]">BEAUTIFUL SPACES.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-[#F5F5F5] mb-8 font-light leading-relaxed">
+                    We transform homes with expert tile installation, luxury flooring, custom walk-in showers, and upscale remodeling built to last in Owensboro, KY and surrounding areas.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+                    <button onclick="openEstimateModal()" class="bg-[#B89556] hover:bg-[#9A7741] text-white font-semibold px-[30px] py-[16px] rounded-[8px] shadow-xl shadow-[#B89556]/30 transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3 text-base">
+                        <i class="fa-solid fa-calculator"></i> Get a Free Estimate
+                    </button>
+                    <a href="tel:2702565833" class="bg-[#1A1A1A]/80 hover:bg-[#1A1A1A] border border-[#333333] text-white font-semibold px-[30px] py-[16px] rounded-[8px] backdrop-blur-md transition text-center flex items-center justify-center gap-3 text-base">
+                        <i class="fa-solid fa-phone text-[#B89556]"></i> Call (270) 256-5833
+                    </a>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-[#333333] grid grid-cols-3 gap-4 text-[#F5F5F5] text-xs sm:text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-[#B89556] text-base"></i>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-[#B89556] text-base"></i>
+                        <span>Local Contractor</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-[#B89556] text-base"></i>
+                        <span>Guaranteed Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building services section... -->
+    <section id="services" class="py-24 bg-[#1A1A1A] border-b border-[#262626]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">Core Services</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-wider text-white mt-3 mb-4">Professional Remodeling & Installation</h2>
+                <p class="text-[#6F6F6F]">From floor-to-ceiling tile work to complete room makeovers, we deliver exceptional results for your home.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-table-cells"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Tile Installation</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Professional floor and wall tile installation using premium materials and expert craftsmanship.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Custom Patterns & Precision</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-shower"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Custom Walk-in Showers</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Luxury walk-in showers designed and installed to transform your bathroom into a personal spa.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Waterproof & Stunning</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-bath"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Bathroom Remodeling</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Complete bathroom renovations from demolition to the finishing touches for your home.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Full Turnkey Solutions</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Kitchen Remodeling</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Beautiful kitchens with custom tile, backsplashes, flooring, and expert finishing work.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Modern Kitchen Makeovers</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Luxury Vinyl Plank (LVP)</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Durable, waterproof LVP flooring professionally installed for lasting performance and style.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>100% Waterproof LVP</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Fireplace Surrounds</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Custom stone and tile fireplace installations that become the breathtaking centerpiece of your home.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Stone & Tile Accents</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Kitchen Backsplashes</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Modern kitchen backsplashes installed with high precision to elevate your kitchen design.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Precision Grout & Trim</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Interior Painting</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Interior painting completed with clean lines and professional finishes to match your new decor.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Flawless Finishes</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="bg-[#111111] border border-[#2A2A2A] rounded-[12px] p-8 hover:border-[#B89556] transition-all duration-300 group flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 bg-[#B89556]/10 text-[#B89556] rounded-[8px] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B89556] group-hover:text-white transition">
+                            <i class="fa-solid fa-house-chimney-user"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Room Additions & Renovations</h3>
+                        <p class="text-[#6F6F6F] text-sm leading-relaxed">Full-scale room expansions, sunrooms, and home interior remodeling services.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-[#222222] flex items-center justify-between text-xs font-semibold text-[#B89556]">
+                        <span>Complete Transformations</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building why choose us section... -->
+    <section id="why-us" class="py-24 bg-[#111111] relative overflow-hidden border-b border-[#222222]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">The Crumps Difference</span>
+                    <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-wider text-white mt-3 mb-6">Why Homeowners Choose Crumps</h2>
+                    <p class="text-[#6F6F6F] mb-8 leading-relaxed">
+                        We pride ourselves on superior craftsmanship, dependable communication, and total transparency on every project we take on in Owensboro and surrounding communities.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 bg-[#1A1A1A] border border-[#2A2A2A] p-4 rounded-[12px]">
+                            <div class="text-[#B89556] text-lg"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="font-semibold text-sm text-white">Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#1A1A1A] border border-[#2A2A2A] p-4 rounded-[12px]">
+                            <div class="text-[#B89556] text-lg"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="font-semibold text-sm text-white">High-Quality Craftsmanship</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#1A1A1A] border border-[#2A2A2A] p-4 rounded-[12px]">
+                            <div class="text-[#B89556] text-lg"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="font-semibold text-sm text-white">Honest, Transparent Pricing</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#1A1A1A] border border-[#2A2A2A] p-4 rounded-[12px]">
+                            <div class="text-[#B89556] text-lg"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="font-semibold text-sm text-white">Remodeling Specialists</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#1A1A1A] border border-[#2A2A2A] p-4 rounded-[12px]">
+                            <div class="text-[#B89556] text-lg"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="font-semibold text-sm text-white">Local Owensboro Contractor</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-[#1A1A1A] border border-[#2A2A2A] p-4 rounded-[12px]">
+                            <div class="text-[#B89556] text-lg"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="font-semibold text-sm text-white">Free Estimates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative rounded-[12px] overflow-hidden shadow-2xl border-2 border-[#333333]">
+                        <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/Custom%20Walk-in%20Showers2.jpg" alt="Custom Walk-in Shower by Crumps" class="w-full h-[450px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-[#B89556] text-white p-6 rounded-[12px] shadow-xl hidden sm:block max-w-xs">
+                        <div class="font-heading font-bold text-3xl mb-1 tracking-wider">100%</div>
+                        <p class="text-xs text-white/90">Satisfaction guaranteed on all custom tile, showers & flooring installations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building recent projects gallery section... -->
+    <section id="gallery" class="py-24 bg-[#1A1A1A] border-b border-[#262626]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">Portfolio</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-wider text-white mt-3 mb-4">Recent Project Gallery</h2>
+                <p class="text-[#6F6F6F]">Explore our recent custom walk-in showers, bathroom remodels, LVP flooring, and kitchen installations.</p>
+            </div>
+
+            <!-- Gallery Grid with Client Images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-[12px] shadow-lg bg-[#111111] cursor-pointer h-72 border border-[#2A2A2A]" onclick="openLightbox(this)">
+                    <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/Custom%20Walk-in%20Showers1.jpg" alt="Custom Walk-in Shower" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[#B89556] text-xs font-bold uppercase tracking-wider mb-1">Custom Showers</span>
+                        <h4 class="text-white font-heading text-xl tracking-wide">Luxury Custom Walk-in Shower</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-[12px] shadow-lg bg-[#111111] cursor-pointer h-72 border border-[#2A2A2A]" onclick="openLightbox(this)">
+                    <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/1000sqf%20of%20LVP%20ripped%20out%20and%20new%20install%20in%202%20day.jpg" alt="Luxury Vinyl Flooring" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[#B89556] text-xs font-bold uppercase tracking-wider mb-1">Flooring</span>
+                        <h4 class="text-white font-heading text-xl tracking-wide">1000 Sq Ft LVP Ripped Out & New Install</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-[12px] shadow-lg bg-[#111111] cursor-pointer h-72 border border-[#2A2A2A]" onclick="openLightbox(this)">
+                    <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/Custom%20Walk-in%20Showers3.jpg" alt="Custom Shower Tile" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[#B89556] text-xs font-bold uppercase tracking-wider mb-1">Tile Work</span>
+                        <h4 class="text-white font-heading text-xl tracking-wide">Stunning Custom Shower & Niches</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-[12px] shadow-lg bg-[#111111] cursor-pointer h-72 border border-[#2A2A2A]" onclick="openLightbox(this)">
+                    <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/Sunroom%201.jpg" alt="Sunroom Remodel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[#B89556] text-xs font-bold uppercase tracking-wider mb-1">Sunroom Remodel</span>
+                        <h4 class="text-white font-heading text-xl tracking-wide">Sunroom Tile & Flooring Upgrade</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-[12px] shadow-lg bg-[#111111] cursor-pointer h-72 border border-[#2A2A2A]" onclick="openLightbox(this)">
+                    <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/room%20we%20finished%20in%20hard%20wood.jpg" alt="Finished Hardwood Room" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[#B89556] text-xs font-bold uppercase tracking-wider mb-1">Hardwood & Flooring</span>
+                        <h4 class="text-white font-heading text-xl tracking-wide">Finished Living Space & Flooring</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-[12px] shadow-lg bg-[#111111] cursor-pointer h-72 border border-[#2A2A2A]" onclick="openLightbox(this)">
+                    <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/stunning%20custom%20showers%2C.jpg" alt="Custom Shower Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[#B89556] text-xs font-bold uppercase tracking-wider mb-1">Bathroom Remodeling</span>
+                        <h4 class="text-white font-heading text-xl tracking-wide">Custom Tile Shower Masterpiece</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building process section... -->
+    <section id="process" class="py-24 bg-[#111111] border-b border-[#222222]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">Step-by-Step</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-wider text-white mt-3 mb-4">Our 4-Step Process</h2>
+                <p class="text-[#6F6F6F]">We make your home renovation project seamless from initial consultation to final reveal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[12px] p-8 relative">
+                    <div class="text-5xl font-heading tracking-wider text-[#B89556]/20 absolute top-4 right-6">01</div>
+                    <div class="w-12 h-12 bg-[#B89556] text-white rounded-[8px] flex items-center justify-center font-bold text-lg mb-6 shadow-md shadow-[#B89556]/20">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Free Consultation</h3>
+                    <p class="text-[#6F6F6F] text-sm leading-relaxed">We discuss your project vision, design ideas, timeline, and budget requirements.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[12px] p-8 relative">
+                    <div class="text-5xl font-heading tracking-wider text-[#B89556]/20 absolute top-4 right-6">02</div>
+                    <div class="w-12 h-12 bg-[#B89556] text-white rounded-[8px] flex items-center justify-center font-bold text-lg mb-6 shadow-md shadow-[#B89556]/20">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Detailed Estimate</h3>
+                    <p class="text-[#6F6F6F] text-sm leading-relaxed">Receive a transparent, no-obligation quote outlining materials, scope, and pricing.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[12px] p-8 relative">
+                    <div class="text-5xl font-heading tracking-wider text-[#B89556]/20 absolute top-4 right-6">03</div>
+                    <div class="w-12 h-12 bg-[#B89556] text-white rounded-[8px] flex items-center justify-center font-bold text-lg mb-6 shadow-md shadow-[#B89556]/20">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Professional Installation</h3>
+                    <p class="text-[#6F6F6F] text-sm leading-relaxed">Our experienced team completes your project with meticulous attention to every detail.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[12px] p-8 relative">
+                    <div class="text-5xl font-heading tracking-wider text-[#B89556]/20 absolute top-4 right-6">04</div>
+                    <div class="w-12 h-12 bg-[#B89556] text-white rounded-[8px] flex items-center justify-center font-bold text-lg mb-6 shadow-md shadow-[#B89556]/20">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wide text-white mb-3">Enjoy Your New Space</h3>
+                    <p class="text-[#6F6F6F] text-sm leading-relaxed">Walk through your gorgeous new bathroom, kitchen, or flooring built to last for years.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building service areas section... -->
+    <section id="areas" class="py-20 bg-[#1A1A1A] border-b border-[#262626]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">Local Coverage</span>
+            <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-wider text-white mt-3 mb-4">Proudly Serving Owensboro & Surrounding Communities</h2>
+            <p class="text-[#6F6F6F] max-w-2xl mx-auto mb-12">We bring expert tile installation and home remodeling services right to your doorstep across the region.</p>
+            
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Owensboro</span>
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Daviess County</span>
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Henderson</span>
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Madisonville</span>
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Hartford</span>
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Beaver Dam</span>
+                <span class="bg-[#111111] border border-[#2A2A2A] px-6 py-3 rounded-[12px] font-semibold text-sm text-white shadow-sm"><i class="fa-solid fa-location-dot text-[#B89556] mr-2"></i>Nearby Kentucky Communities</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building testimonials section... -->
+    <section id="testimonials" class="py-24 bg-[#111111] border-b border-[#222222]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">Client Reviews</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-wider text-white mt-3 mb-4">What Our Customers Say</h2>
+                <p class="text-[#6F6F6F]">Read feedback from homeowners who trusted us with their remodeling and flooring needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] p-8 rounded-[12px] shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-[#B89556] gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-[#F5F5F5] italic mb-6 leading-relaxed">"Our bathroom looks incredible. The shower turned out even better than we imagined. True master craftsmanship!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-[#2A2A2A]">
+                        <div class="w-10 h-10 bg-[#B89556] text-white rounded-full flex items-center justify-center font-bold">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Homeowner in Owensboro</h4>
+                            <span class="text-xs text-[#6F6F6F]">Bathroom Remodel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] p-8 rounded-[12px] shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-[#B89556] gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-[#F5F5F5] italic mb-6 leading-relaxed">"Excellent communication, quality work, and everything was finished on time. They ripped out and installed 1000 sq ft of flooring seamlessly."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-[#2A2A2A]">
+                        <div class="w-10 h-10 bg-[#B89556] text-white rounded-full flex items-center justify-center font-bold">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Homeowner in Daviess County</h4>
+                            <span class="text-xs text-[#6F6F6F]">LVP Flooring Installation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] p-8 rounded-[12px] shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-[#B89556] gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-[#F5F5F5] italic mb-6 leading-relaxed">"Highly recommend Crumps Tile & Flooring. Honest pricing, extremely polite, and clean workspaces throughout the project."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-[#2A2A2A]">
+                        <div class="w-10 h-10 bg-[#B89556] text-white rounded-full flex items-center justify-center font-bold">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Homeowner in Henderson</h4>
+                            <span class="text-xs text-[#6F6F6F]">Custom Tile & Backsplash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Building footer section... -->
+    <footer id="contact" class="bg-[#111111] text-white pt-20 pb-12 border-t border-[#222222]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-[#222222]">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="https://raw.githubusercontent.com/Creativetugs/Crumps-Tile-Flooring-LLC/refs/heads/main/crumps-logo.png" alt="Crumps Logo" class="h-10 w-auto object-contain bg-white/10 p-1 rounded-lg">
+                        <div class="flex flex-col">
+                            <span class="font-heading tracking-wider text-xl text-white leading-none">Crumps</span>
+                            <span class="text-[10px] uppercase tracking-widest text-[#B89556] font-semibold mt-1">Tile & Flooring LLC</span>
+                        </div>
+                    </div>
+                    <p class="text-[#6F6F6F] text-sm leading-relaxed mb-6">
+                        Owensboro's trusted specialist in custom tile installation, luxury vinyl plank, bathroom and kitchen remodeling, and professional painting.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 bg-[#1A1A1A] hover:bg-[#B89556] text-[#F5F5F5] hover:text-white rounded-[8px] flex items-center justify-center transition border border-[#2A2A2A]"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="tel:2702565833" class="w-10 h-10 bg-[#1A1A1A] hover:bg-[#B89556] text-[#F5F5F5] hover:text-white rounded-[8px] flex items-center justify-center transition border border-[#2A2A2A]"><i class="fa-solid fa-phone"></i></a>
+                        <a href="mailto:mattcrump015@yahoo.com" class="w-10 h-10 bg-[#1A1A1A] hover:bg-[#B89556] text-[#F5F5F5] hover:text-white rounded-[8px] flex items-center justify-center transition border border-[#2A2A2A]"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-heading text-xl tracking-wide text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-[#6F6F6F]">
+                        <li><a href="#services" class="hover:text-[#B89556] transition">Services</a></li>
+                        <li><a href="#why-us" class="hover:text-[#B89556] transition">Why Choose Us</a></li>
+                        <li><a href="#gallery" class="hover:text-[#B89556] transition">Recent Projects</a></li>
+                        <li><a href="#process" class="hover:text-[#B89556] transition">Our Process</a></li>
+                        <li><a href="#areas" class="hover:text-[#B89556] transition">Service Areas</a></li>
+                        <li><a href="#testimonials" class="hover:text-[#B89556] transition">Client Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-heading text-xl tracking-wide text-white mb-6">Our Services</h3>
+                    <ul class="space-y-3 text-sm text-[#6F6F6F]">
+                        <li><span class="hover:text-[#B89556] transition">Tile Installation</span></li>
+                        <li><span class="hover:text-[#B89556] transition">Custom Walk-in Showers</span></li>
+                        <li><span class="hover:text-[#B89556] transition">Bathroom Remodeling</span></li>
+                        <li><span class="hover:text-[#B89556] transition">Kitchen Remodeling</span></li>
+                        <li><span class="hover:text-[#B89556] transition">Luxury Vinyl Plank (LVP)</span></li>
+                        <li><span class="hover:text-[#B89556] transition">Fireplace Surrounds & Painting</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-heading text-xl tracking-wide text-white mb-6">Contact Info</h3>
+                    <ul class="space-y-4 text-sm text-[#6F6F6F]">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-[#B89556] mt-1"></i>
+                            <div>
+                                <span class="block text-xs text-[#555555] font-semibold uppercase">Phone</span>
+                                <a href="tel:2702565833" class="text-white font-bold hover:text-[#B89556] transition">(270) 256-5833</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-[#B89556] mt-1"></i>
+                            <div>
+                                <span class="block text-xs text-[#555555] font-semibold uppercase">Email</span>
+                                <a href="mailto:mattcrump015@yahoo.com" class="text-white font-semibold hover:text-[#B89556] transition">mattcrump015@yahoo.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-[#B89556] mt-1"></i>
+                            <div>
+                                <span class="block text-xs text-[#555555] font-semibold uppercase">Location</span>
+                                <span class="text-white font-semibold">Owensboro, KY & Surrounding Areas</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#555555] gap-4">
+                <p>&copy; 2026 Crumps Tile & Flooring LLC. All rights reserved. Licensed & Insured.</p>
+                <div class="flex gap-6">
+                    <span class="hover:text-[#888888]">Privacy Policy</span>
+                    <span class="hover:text-[#888888]">Terms of Service</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STREAMING_CHUNK:Building modals for estimates and lightbox... -->
+    <div id="estimate-modal" class="fixed inset-0 z-50 bg-[#111111]/9opath backdrop-blur-sm hidden items-center justify-center p-4 bg-black/80">
+        <div class="bg-[#1A1A1A] border border-[#333333] rounded-[16px] max-w-lg w-full p-8 relative shadow-2xl">
+            <button onclick="closeEstimateModal()" class="absolute top-6 right-6 text-[#6F6F6F] hover:text-white text-xl font-bold bg-[#111111] hover:bg-[#222222] w-10 h-10 rounded-full flex items-center justify-center transition border border-[#333333]">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-[#B89556] font-bold uppercase tracking-wider text-xs bg-[#B89556]/10 px-3 py-1 rounded-full border border-[#B89556]/20">No Obligation</span>
+                <h3 class="font-heading text-3xl tracking-wide text-white mt-2">Get Your Free Estimate</h3>
+                <p class="text-[#6F6F6F] text-sm mt-1">Fill out the form below or call us directly at <a href="tel:2702565833" class="text-[#B89556] font-bold">(270) 256-5833</a>.</p>
+            </div>
+            
+            <form id="estimate-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-[#6F6F6F] mb-1">Your Full Name</label>
+                    <input type="text" required class="w-full bg-[#111111] border border-[#333333] text-white rounded-[8px] px-4 py-3 text-sm focus:outline-none focus:border-[#B89556] transition" placeholder="John Doe">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-[#6F6F6F] mb-1">Phone Number</label>
+                        <input type="tel" required class="w-full bg-[#111111] border border-[#333333] text-white rounded-[8px] px-4 py-3 text-sm focus:outline-none focus:border-[#B89556] transition" placeholder="(270) 000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-[#6F6F6F] mb-1">City / Location</label>
+                        <input type="text" required class="w-full bg-[#111111] border border-[#333333] text-white rounded-[8px] px-4 py-3 text-sm focus:outline-none focus:border-[#B89556] transition" placeholder="Owensboro, KY">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-[#6F6F6F] mb-1">Service Needed</label>
+                    <select class="w-full bg-[#111111] border border-[#333333] text-white rounded-[8px] px-4 py-3 text-sm focus:outline-none focus:border-[#B89556] transition">
+                        <option class="bg-[#111111]">Tile Installation</option>
+                        <option class="bg-[#111111]">Custom Walk-in Shower</option>
+                        <option class="bg-[#111111]">Bathroom Remodeling</option>
+                        <option class="bg-[#111111]">Kitchen Remodeling & Backsplash</option>
+                        <option class="bg-[#111111]">Luxury Vinyl Plank (LVP) Flooring</option>
+                        <option class="bg-[#111111]">Fireplace Surround</option>
+                        <option class="bg-[#111111]">Interior Painting</option>
+                        <option class="bg-[#111111]">Other Remodeling Project</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-[#6F6F6F] mb-1">Project Details</label>
+                    <textarea rows="3" class="w-full bg-[#111111] border border-[#333333] text-white rounded-[8px] px-4 py-3 text-sm focus:outline-none focus:border-[#B89556] transition" placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#B89556] hover:bg-[#9A7741] text-white font-bold py-4 rounded-[8px] shadow-lg shadow-[#B89556]/30 transition text-base">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-[#1A1A1A] border border-[#333333] rounded-[16px] max-w-md w-full p-8 text-center relative shadow-2xl">
+            <div class="w-16 h-16 bg-[#B89556]/20 text-[#B89556] border border-[#B89556]/40 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="font-heading text-3xl tracking-wide text-white mb-2">Estimate Request Received!</h3>
+            <p class="text-[#6F6F6F] text-sm mb-6">Thank you for reaching out to Crumps Tile & Flooring LLC. Matt Crump or a member of our team will contact you shortly.</p>
+            <button onclick="closeSuccessModal()" class="w-full bg-[#B89556] hover:bg-[#9A7741] text-white font-bold py-3.5 rounded-[8px] transition text-sm">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-[#B89556] text-2xl font-bold w-12 h-12 rounded-full bg-[#1A1A1A] border border-[#333333] flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Project Zoom" class="max-w-full max-h-[85vh] rounded-[12px] shadow-2xl object-contain border border-[#333333]">
+    </div>
+
+    <!-- STREAMING_CHUNK:Adding JavaScript controllers... -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function openEstimateModal() {
+            document.getElementById('estimate-modal').classList.remove('hidden');
+            document.getElementById('estimate-modal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeEstimateModal() {
+            document.getElementById('estimate-modal').classList.add('hidden');
+            document.getElementById('estimate-modal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            closeEstimateModal();
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('success-modal').classList.add('flex');
+            document.getElementById('estimate-form').reset();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.getElementById('success-modal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = img.src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox-modal');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeEstimateModal();
+                closeSuccessModal();
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
+```eof
